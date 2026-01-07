@@ -1,0 +1,98 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins, sans-serif;
+}
+:root {
+  --bgn-color: #e0e5ec;
+  --input-color: #6d7582;
+  /* --hover-color: hsl(215, 24%, 80%); */
+  --ice-blue: #e3f2fd;
+  --baby-blue: hsl(186, 80%, 40%);
+  --pale-gray: hsl(0, 0%, 95%);
+  --blue: #19d1e6;
+  --glow-light: 5px 5px 15px #a3b1c6, -5px -5px 10px #ffffff;
+  --glow-shadow: 10px 10px 20px #a3b1c6, -10px -10px 20px #ffffff;
+}
+@font-face {
+  font-family: "poppins";
+  src: url('./poppins/Poppins-Regular.ttf');
+}
+body {
+  /* line-height: 1.5; */
+  font-weight: 400;
+  background-color: var(--bgn-color);
+  font-family: poppins;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: auto;
+  width: 100%;
+}
+.form {
+  background-color: var(--bgn-color);
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--glow-shadow);
+  min-width: 40%;
+}
+
+.form input, select, textarea, .input-label{
+  color: var(--input-color);
+  background-color: var(--bgn-color);
+  box-shadow: var(--glow-light);
+  font-size: 1rem;
+  border: none;
+  margin-bottom: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  width: 100%;
+}
+.form button {
+  color: var(--input-color);
+  background-color: var(--bgn-color);
+  box-shadow: var(--glow-shadow);
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: .8rem 2.5rem;
+  border-radius: 2rem;
+  border: none;
+  transition: .6s ease;
+  cursor: pointer;
+}
+.form button:active {
+  /* background-color: var(--hover-color); */
+  box-shadow: inset var(--glow-light);
+}
+#type {
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+#type option {
+  background-color: rgb(220, 239, 248);
+  /* backdrop-filter: blur(20px); */
+  padding: 2rem;
+}
+#input-file {
+  display: none;
+}
+.input-label{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.input-label i {
+  font-size: 2rem;
+  color: var(--input-color);
+  margin-right: 1rem;
+}
