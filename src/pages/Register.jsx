@@ -25,8 +25,11 @@ function Register() {
 
         } catch (err) {
             console.error(err);
-            // toast.error(Err);
-            toast.error(err.response.data.err);
+            if (err.response?.data?.err) {
+                toast.error(err.response.data.err);
+            } else {
+                toast.error(err.message || "Failed! Please try again.");
+            }
         }finally {
             setData({
                 username: "",

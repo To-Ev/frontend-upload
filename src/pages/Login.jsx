@@ -27,8 +27,11 @@ function Login() {
 
         } catch (err) {
             console.error(err);
-            toast.error(err.response.data.err);
-            // toast.error(Err);
+            if (err.response?.data?.err) {
+                toast.error(err.response.data.err);
+            } else {
+                toast.error(err.message || "Login failed. Please try again.");
+            }
         }finally{
             setData({
                 username: "",

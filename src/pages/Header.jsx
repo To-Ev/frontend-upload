@@ -18,8 +18,11 @@ function Header() {
            sessionStorage.removeItem('token');
         } catch (err) {
             console.error(err);
-            toast.error(err.message);
-            toast.error(err.response.data.err);
+            if (err.response?.data?.err) {
+                toast.error(err.response.data.err);
+            } else {
+                toast.error(err.message || "Failed! Please try again.");
+            }
         }
         
     }
